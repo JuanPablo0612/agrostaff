@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.kotlinxSerialization)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.sekret)
 }
 
 kotlin {
@@ -92,5 +93,13 @@ android {
 
 dependencies {
     debugImplementation(compose.uiTooling)
+}
+
+sekret {
+    properties {
+        enabled.set(true)
+        packageName.set("com.juanpablo0612.agrostaff")
+        propertiesFile.set(File("sekret.properties"))
+    }
 }
 
