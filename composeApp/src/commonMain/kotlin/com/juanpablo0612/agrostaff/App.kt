@@ -18,6 +18,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import agrostaff.composeapp.generated.resources.Res
 import agrostaff.composeapp.generated.resources.compose_multiplatform
+import androidx.compose.material3.Surface
 import com.juanpablo0612.agrostaff.ui.theme.AgroStaffTheme
 import org.koin.compose.KoinApplication
 import org.koin.core.context.startKoin
@@ -30,7 +31,9 @@ fun App() {
         modules(appModule)
     }) {
         AgroStaffTheme {
+            Surface(color = MaterialTheme.colorScheme.background) {
 
+            }
         }
     }
 }
