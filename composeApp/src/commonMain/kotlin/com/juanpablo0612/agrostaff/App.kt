@@ -18,6 +18,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import agrostaff.composeapp.generated.resources.Res
 import agrostaff.composeapp.generated.resources.compose_multiplatform
+import com.juanpablo0612.agrostaff.ui.theme.AgroStaffTheme
 import org.koin.compose.KoinApplication
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
@@ -28,7 +29,7 @@ fun App() {
     KoinApplication(application = {
         modules(appModule)
     }) {
-        MaterialTheme {
+        AgroStaffTheme {
 
         }
     }
