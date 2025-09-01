@@ -7,8 +7,10 @@ import kotlinx.serialization.Serializable
 @Serializable
 object SignInDestination
 
-fun NavGraphBuilder.signInDestination() {
+fun NavGraphBuilder.signInDestination(
+    onNavigateToPasswordRecovery: () -> Unit, onNavigateToSignUp: () -> Unit
+) {
     composable<SignInDestination> {
-        SignInScreen()
+        SignInScreen(onNavigateToPasswordRecovery = onNavigateToPasswordRecovery, onNavigateToSignUp = onNavigateToSignUp)
     }
 }

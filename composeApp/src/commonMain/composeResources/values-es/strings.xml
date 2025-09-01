@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">AgroStaff</string>
+
+    <string name="login_welcome_back">¡Bienvenido de nuevo!</string>
+    <string name="login_log_in_to_continue">Inicia sesión para continuar</string>
+    <string name="login_button_text">Iniciar sesión</string>
+    <string name="login_no_account_prefix">¿No tienes una cuenta? </string>
+    <string name="login_create_account_suffix">Crea una aquí</string>
+    <string name="login_forgot_password_button_text">¿Olvidaste tu contraseña?</string>
+
+    <string name="register_title">Crear una cuenta</string>
+    <string name="register_button_text">Crear cuenta</string>
+
+    <string name="password_recovery_title">Recuperación de contraseña</string>
+    <string name="password_recovery_subtitle">Ingresa tu correo electrónico para restablecer tu contraseña</string>
+    <string name="password_recovery_button_text">Enviar correo de recuperación</string>
+
+    <string name="email_label_text">Correo electrónico</string>
+    <string name="email_placeholder">Ingresa tu correo electrónico</string>
+    <string name="email_error_text">Dirección de correo electrónico inválida</string>
+
+    <string name="password_label_text">Contraseña</string>
+    <string name="password_placeholder">Ingresa tu contraseña</string>
+    <string name="password_error_text">La contraseña debe tener al menos 8 caracteres</string>
+
+    <string name="confirm_password_label_text">Confirmar contraseña</string>
+    <string name="confirm_password_placeholder">Ingresa tu contraseña de nuevo</string>
+    <string name="confirm_password_error_text">Las contraseñas no coinciden</string>
+
+    <string name="first_name_label_text">Nombre</string>
+    <string name="first_name_placeholder">Ingresa tu nombre</string>}
+    <string name="first_name_error_text">Nombre inválido</string>
+
+    <string name="last_name_label_text">Apellido</string>
+    <string name="last_name_placeholder">Ingresa tu apellido</string>
+    <string name="last_name_error_text">Apellido inválido</string>
+
+    <string name="contact_number_label_text">Número de contacto</string>
+    <string name="contact_number_placeholder">Ingresa tu número de contacto</string>
+    <string name="contact_number_error_text">Número de contacto inválido</string>
+
+    <string name="profile_photo_upload_text">Subir foto de perfil</string>
+    <string name="profile_photo_icon_content_description">Icono de cámara</string>
+
+    <string name="create_task_title">Crear tarea</string>
+    <string name="create_task_button_text">Crear tarea</string>
+    <string name="create_task_error_text">Error creando la tarea</string>
+
+    <string name="task_name_label_text">Nombre de la tarea</string>
+    <string name="task_name_placeholder">Ingresa el nombre de la tarea</string>
+    <string name="task_name_error_text">Nombre de la tarea inválido</string>
+
+    <string name="task_description_label_text">Descripción</string>
+    <string name="task_description_placeholder">Ingresa la descripción de la tarea</string>
+    <string name="task_description_error_text">Descripción de la tarea inválida</string>
+
+    <string name="task_estimated_duration_label_text">Duración estimada</string>
+    <string name="task_estimated_duration_placeholder">Ingresa la duración</string>
+    <string name="task_estimated_duration_error_text">Duración inválida</string>
+
+    <string name="task_start_date_label_text">Fecha de inicio</string>
+    <string name="task_start_date_placeholder">Selecciona la fecha</string>
+    <string name="task_start_date_error_text">Fecha de inicio inválida</string>
+
+    <string name="task_start_time_label_text">Hora de inicio</string>
+    <string name="task_start_time_placeholder">Seleccione la hora</string>
+    <string name="task_start_time_error_text">Hora de inicio inválida</string>
+
+    <string name="task_additional_notes_label_text">Notas adicionales</string>
+    <string name="task_additional_notes_placeholder">Ingresa las notas adicionales</string>
+    <string name="task_additional_notes_error_text">Notas adicionales inválidas</string>
+
+    <string name="home_title">Inicio</string>
+    <string name="home_welcome">¡Hola, %1$s!</string>
+    <string name="home_subtitle">¡Administra tu equipo y las tareas eficientemente!</string>
+    <string name="home_quick_stats_title">Estadísticas Rápidas</string>
+    <string name="home_active_workers_title">Trabajadores Activos</string>
+    <string name="home_manage_button_text">Administrar</string>
+    <string name="home_pending_tasks_title">Tareas Pendientes</string>
+    <string name="home_view_tasks_button_text">Ver Tareas</string>
+    <string name="home_overall_performance">Rendimiento General</string>
+    <string name="home_view_reports_title">Ver Reportes</string>
+    <string name="home_todays_attendence_title">Asistencia de Hoy</string>
+    <string name="home_view_details_button_text">Ver Detalles</string>
+
+    <string name="tasks_title">Tareas</string>
+    <string name="users_title">Usuarios</string>
+    <string name="more_title">Más</string>
+
+    <string name="role_admin">Administrador</string>
+    <string name="role_supervisor">Supervisor</string>
+    <string name="role_worker">Trabajador</string>
+</resources>

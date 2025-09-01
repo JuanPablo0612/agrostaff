@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name" translatable="false">AgroStaff</string>
+
+    <string name="login_welcome_back">Welcome back!</string>
+    <string name="login_log_in_to_continue">Log in to continue</string>
+    <string name="login_button_text">Log in</string>
+    <string name="login_no_account_prefix">Don\'t you have an account? </string>
+    <string name="login_create_account_suffix">Create one here</string>
+    <string name="login_forgot_password_button_text">Forgot your password?</string>
+
+    <string name="register_title">Create an account</string>
+    <string name="register_button_text">Create Account</string>
+
+    <string name="password_recovery_title">Password Recovery</string>
+    <string name="password_recovery_subtitle">Enter your email to reset your password</string>
+    <string name="password_recovery_button_text">Send Recovery Email</string>
+
+    <string name="email_label_text">Email</string>
+    <string name="email_placeholder">Enter your email</string>
+    <string name="email_error_text">Invalid email address</string>
+
+    <string name="password_label_text">Password</string>
+    <string name="password_placeholder">Enter your password</string>
+    <string name="password_error_text">Password must be at least 8 characters long</string>
+
+    <string name="confirm_password_label_text">Confirm password</string>
+    <string name="confirm_password_placeholder">Enter your password again</string>
+    <string name="confirm_password_error_text">Passwords do not match</string>
+
+    <string name="first_name_label_text">First Name</string>
+    <string name="first_name_placeholder">Enter your first name</string>
+    <string name="first_name_error_text">Invalid first name</string>
+
+    <string name="last_name_label_text">Last Name</string>
+    <string name="last_name_placeholder">Enter your last name</string>
+    <string name="last_name_error_text">Invalid last name</string>
+
+    <string name="contact_number_label_text">Contact Number</string>
+    <string name="contact_number_placeholder">Enter your contact number</string>
+    <string name="contact_number_error_text">Invalid contact number</string>
+
+    <string name="profile_photo_upload_text">Upload Profile Photo</string>
+    <string name="profile_photo_icon_content_description">Camera icon</string>
+
+    <string name="create_task_title">Create New Task</string>
+    <string name="create_task_button_text">Create Task</string>
+    <string name="create_task_error_text">Error creating task</string>
+
+    <string name="task_name_label_text">Task Name</string>
+    <string name="task_name_placeholder">Enter task name</string>
+    <string name="task_name_error_text">Invalid task name</string>
+
+    <string name="task_description_label_text">Description</string>
+    <string name="task_description_placeholder">Enter task description</string>
+    <string name="task_description_error_text">Invalid task description</string>
+
+    <string name="task_estimated_duration_label_text">Estimated Duration</string>
+    <string name="task_estimated_duration_placeholder">Enter duration</string>
+    <string name="task_estimated_duration_error_text">Invalid duration</string>
+
+    <string name="task_start_date_label_text">Start Date</string>
+    <string name="task_start_date_placeholder">Select date</string>
+    <string name="task_start_date_error_text">Invalid start date</string>
+
+    <string name="task_start_time_label_text">Start Time</string>
+    <string name="task_start_time_placeholder">Select time</string>
+    <string name="task_start_time_error_text">Invalid start time</string>
+
+    <string name="task_additional_notes_label_text">Additional Notes</string>
+    <string name="task_additional_notes_placeholder">Enter additional notes</string>
+    <string name="task_additional_notes_error_text">Invalid additional notes</string>
+
+    <string name="home_title">Home</string>
+    <string name="home_welcome">Hello, %1$s!</string>
+    <string name="home_subtitle">Manage your team and tasks efficiently!</string>
+    <string name="home_quick_stats_title">Quick Stats</string>
+    <string name="home_active_workers_title">Active Workers</string>
+    <string name="home_manage_button_text">Manage</string>
+    <string name="home_pending_tasks_title">Pending Tasks</string>
+    <string name="home_view_tasks_button_text">View Tasks</string>
+    <string name="home_overall_performance">Overall Performance</string>
+    <string name="home_view_reports_title">View Reports</string>
+    <string name="home_todays_attendence_title">Today\'s Attendance</string>
+    <string name="home_view_details_button_text">View Details</string>
+
+    <string name="tasks_title">Tasks</string>
+    <string name="users_title">Users</string>
+    <string name="more_title">More</string>
+
+    <string name="role_admin">Admin</string>
+    <string name="role_supervisor">Supervisor</string>
+    <string name="role_worker">Worker</string>
+</resources>

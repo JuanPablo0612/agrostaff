@@ -14,6 +14,6 @@ fun AppNavigation() {
         navController = navController,
         startDestination = SignInDestination
     ) {
-        signInDestination()
+        signInDestination(onNavigateToPasswordRecovery = {}, onNavigateToSignUp = {})
     }
 }
