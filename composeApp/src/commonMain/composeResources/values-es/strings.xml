@@ -71,24 +71,18 @@
     <string name="task_additional_notes_placeholder">Ingresa las notas adicionales</string>
     <string name="task_additional_notes_error_text">Notas adicionales inválidas</string>
 
-    <string name="home_title">Inicio</string>
-    <string name="home_welcome">¡Hola, %1$s!</string>
-    <string name="home_subtitle">¡Administra tu equipo y las tareas eficientemente!</string>
-    <string name="home_quick_stats_title">Estadísticas Rápidas</string>
-    <string name="home_active_workers_title">Trabajadores Activos</string>
-    <string name="home_manage_button_text">Administrar</string>
-    <string name="home_pending_tasks_title">Tareas Pendientes</string>
-    <string name="home_view_tasks_button_text">Ver Tareas</string>
-    <string name="home_overall_performance">Rendimiento General</string>
-    <string name="home_view_reports_title">Ver Reportes</string>
-    <string name="home_todays_attendence_title">Asistencia de Hoy</string>
-    <string name="home_view_details_button_text">Ver Detalles</string>
-
     <string name="tasks_title">Tareas</string>
     <string name="users_title">Usuarios</string>
     <string name="more_title">Más</string>
 
+    <string name="user_identity_document">%1$s %2$d</string>
+
     <string name="role_admin">Administrador</string>
     <string name="role_supervisor">Supervisor</string>
     <string name="role_worker">Trabajador</string>
+
+    <string name="add_block_title">Agregar nuevo bloque</string>
+    <string name="add_block_button_text">Agregar bloque</string>
+    <string name="block_name_label_text">Nombre</string>
+    <string name="block_description_label_text">Descripción</string>
 </resources>

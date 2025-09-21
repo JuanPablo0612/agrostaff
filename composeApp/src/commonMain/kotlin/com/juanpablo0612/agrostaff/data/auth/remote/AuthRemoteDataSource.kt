@@ -1,7 +1,6 @@
 package com.juanpablo0612.agrostaff.data.auth.remote
 
 import io.github.jan.supabase.SupabaseClient
-import io.github.jan.supabase.auth.OtpType
 import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.auth.providers.builtin.Email
 

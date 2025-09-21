@@ -70,24 +70,18 @@
     <string name="task_additional_notes_placeholder">Enter additional notes</string>
     <string name="task_additional_notes_error_text">Invalid additional notes</string>
 
-    <string name="home_title">Home</string>
-    <string name="home_welcome">Hello, %1$s!</string>
-    <string name="home_subtitle">Manage your team and tasks efficiently!</string>
-    <string name="home_quick_stats_title">Quick Stats</string>
-    <string name="home_active_workers_title">Active Workers</string>
-    <string name="home_manage_button_text">Manage</string>
-    <string name="home_pending_tasks_title">Pending Tasks</string>
-    <string name="home_view_tasks_button_text">View Tasks</string>
-    <string name="home_overall_performance">Overall Performance</string>
-    <string name="home_view_reports_title">View Reports</string>
-    <string name="home_todays_attendence_title">Today\'s Attendance</string>
-    <string name="home_view_details_button_text">View Details</string>
-
     <string name="tasks_title">Tasks</string>
     <string name="users_title">Users</string>
     <string name="more_title">More</string>
 
+    <string name="user_identity_document" translatable="false">%1$s %2$d</string>
+
     <string name="role_admin">Admin</string>
     <string name="role_supervisor">Supervisor</string>
     <string name="role_worker">Worker</string>
+
+    <string name="add_block_title">Add New Block</string>
+    <string name="add_block_button_text">Add Block</string>
+    <string name="block_name_label_text">Name</string>
+    <string name="block_description_label_text">Description</string>
 </resources>

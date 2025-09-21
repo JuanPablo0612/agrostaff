@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.juanpablo0612.agrostaff.ui.auth.sign_in.SignInDestination
 import com.juanpablo0612.agrostaff.ui.auth.sign_in.signInDestination
+import com.juanpablo0612.agrostaff.ui.users.list.userListDestination
 
 @Composable
 fun AppNavigation() {
@@ -15,5 +16,6 @@ fun AppNavigation() {
         startDestination = SignInDestination
     ) {
         signInDestination(onNavigateToPasswordRecovery = {}, onNavigateToSignUp = {})
+        userListDestination(onNavigateToUserDetail = {})
     }
 }
