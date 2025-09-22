@@ -83,5 +83,7 @@
     <string name="add_block_title">Add New Block</string>
     <string name="add_block_button_text">Add Block</string>
     <string name="block_name_label_text">Name</string>
+    <string name="block_name_error_text">Block name is required</string>
     <string name="block_description_label_text">Description</string>
+    <string name="block_description_error_text">Block description is required</string>
 </resources>
