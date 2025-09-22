@@ -84,5 +84,7 @@
     <string name="add_block_title">Agregar nuevo bloque</string>
     <string name="add_block_button_text">Agregar bloque</string>
     <string name="block_name_label_text">Nombre</string>
+    <string name="block_name_error_text">El nombre del bloque es obligatorio</string>
     <string name="block_description_label_text">Descripción</string>
+    <string name="block_description_error_text">La descripción del bloque es obligatoria</string>
 </resources>
