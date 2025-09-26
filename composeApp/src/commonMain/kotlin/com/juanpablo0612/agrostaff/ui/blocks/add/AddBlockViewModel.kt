@@ -62,10 +62,6 @@ class AddBlockViewModel(
         }
     }
 
-    fun onBlockHandled() {
-        uiState = uiState.copy(isBlockAdded = false)
-    }
-
     private fun validateFields(): Boolean {
         val isValidName = uiState.name.isNotBlank()
         val isValidDescription = uiState.description.isNotBlank()

@@ -46,7 +46,6 @@ fun AddBlockScreen(
     LaunchedEffect(uiState.isBlockAdded) {
         if (uiState.isBlockAdded) {
             onBlockAdded()
-            viewModel.onBlockHandled()
         }
     }
 
