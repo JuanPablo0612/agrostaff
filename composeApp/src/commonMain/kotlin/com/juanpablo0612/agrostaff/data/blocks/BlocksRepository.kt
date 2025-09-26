@@ -12,4 +12,11 @@ class BlocksRepository(private val remoteDataSource: BlocksRemoteDataSource) {
     } catch (e: Exception) {
         Result.failure(e as Throwable)
     }
+
+    suspend fun getAllBlocks() = try {
+        val models = remoteDataSource.getAllBlocks()
+        Result.success(models.map { it.toDomain() })
+    } catch (e: Exception) {
+        Result.failure(e as Throwable)
+    }
 }
