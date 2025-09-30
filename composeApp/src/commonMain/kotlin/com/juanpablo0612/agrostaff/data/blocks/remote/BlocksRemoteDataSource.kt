@@ -27,4 +27,24 @@ class BlocksRemoteDataSource(private val supabase: SupabaseClient) {
             }
         }
         .decodeSingleOrNull<BlockModel>()
+
+    suspend fun updateBlock(blockId: Int, block: BlockModel) = supabase
+        .from(BLOCKS_TABLE_NAME)
+        .update(block) {
+            filter {
+                BlockModel::id eq blockId
+            }
+            select()
+        }
+        .decodeSingleOrNull<BlockModel>()
+
+    suspend fun deleteBlock(blockId: Int) = supabase
+        .from(BLOCKS_TABLE_NAME)
+        .delete {
+            filter {
+                BlockModel::id eq blockId
+            }
+            select()
+        }
+        .decodeSingleOrNull<BlockModel>()
 }

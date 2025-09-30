@@ -19,4 +19,25 @@ class BlocksRepository(private val remoteDataSource: BlocksRemoteDataSource) {
     } catch (e: Exception) {
         Result.failure(e as Throwable)
     }
+
+    suspend fun getBlockById(id: Int) = try {
+        val model = remoteDataSource.getBlockById(id)
+        Result.success(model?.toDomain())
+    } catch (e: Exception) {
+        Result.failure(e as Throwable)
+    }
+
+    suspend fun updateBlock(blockId: Int, block: Block) = try {
+        val model = remoteDataSource.updateBlock(blockId, block.toModel())
+        Result.success(model?.toDomain())
+    } catch (e: Exception) {
+        Result.failure(e as Throwable)
+    }
+
+    suspend fun deleteBlock(blockId: Int) = try {
+        val model = remoteDataSource.deleteBlock(blockId)
+        Result.success(model?.toDomain())
+    } catch (e: Exception) {
+        Result.failure(e as Throwable)
+    }
 }
