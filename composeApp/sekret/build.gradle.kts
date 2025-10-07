@@ -68,4 +68,5 @@ kotlin {
 }
 android {
   namespace = "com.juanpablo0612.agrostaff"
+  compileSdk = 36
 }
