@@ -29,7 +29,7 @@
     <string name="confirm_password_error_text">Las contraseñas no coinciden</string>
 
     <string name="first_name_label_text">Nombre</string>
-    <string name="first_name_placeholder">Ingresa tu nombre</string>}
+    <string name="first_name_placeholder">Ingresa tu nombre</string>
     <string name="first_name_error_text">Nombre inválido</string>
 
     <string name="last_name_label_text">Apellido</string>
@@ -80,6 +80,14 @@
     <string name="role_admin">Administrador</string>
     <string name="role_supervisor">Supervisor</string>
     <string name="role_worker">Trabajador</string>
+
+    <string name="blocks_title">Bloques</string>
+    <string name="block_list_empty_state">Aún no hay bloques. Agrega tu primer bloque para comenzar.</string>
+    <string name="block_list_generic_error">No se pudieron cargar los bloques</string>
+    <string name="block_list_delete_error">No se pudo eliminar el bloque</string>
+    <string name="block_list_retry_button">Intentar de nuevo</string>
+    <string name="block_list_add_content_description">Agregar bloque</string>
+    <string name="block_list_delete_content_description">Eliminar bloque</string>
 
     <string name="add_block_title">Agregar nuevo bloque</string>
     <string name="add_block_button_text">Agregar bloque</string>

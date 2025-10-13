@@ -80,6 +80,14 @@
     <string name="role_supervisor">Supervisor</string>
     <string name="role_worker">Worker</string>
 
+    <string name="blocks_title">Blocks</string>
+    <string name="block_list_empty_state">No blocks yet. Add your first block to get started.</string>
+    <string name="block_list_generic_error">Unable to load blocks</string>
+    <string name="block_list_delete_error">Unable to delete block</string>
+    <string name="block_list_retry_button">Try again</string>
+    <string name="block_list_add_content_description">Add block</string>
+    <string name="block_list_delete_content_description">Delete block</string>
+
     <string name="add_block_title">Add New Block</string>
     <string name="add_block_button_text">Add Block</string>
     <string name="block_name_label_text">Name</string>
