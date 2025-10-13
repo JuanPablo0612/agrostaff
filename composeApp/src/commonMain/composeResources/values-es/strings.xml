@@ -95,4 +95,26 @@
     <string name="block_name_error_text">El nombre del bloque es obligatorio</string>
     <string name="block_description_label_text">Descripción</string>
     <string name="block_description_error_text">La descripción del bloque es obligatoria</string>
+
+    <string name="beds_title">Camas</string>
+    <string name="bed_list_empty_state">Aún no hay camas. Agrega tu primera cama para comenzar.</string>
+    <string name="bed_list_generic_error">No se pudieron cargar las camas</string>
+    <string name="bed_list_delete_error">No se pudo eliminar la cama</string>
+    <string name="bed_list_retry_button">Intentar de nuevo</string>
+    <string name="bed_list_add_content_description">Agregar cama</string>
+    <string name="bed_list_delete_content_description">Eliminar cama</string>
+    <string name="bed_list_block_label">Bloque %1$d</string>
+
+    <string name="add_bed_title">Agregar nueva cama</string>
+    <string name="add_bed_button_text">Agregar cama</string>
+    <string name="bed_block_label_text">Bloque</string>
+    <string name="bed_block_placeholder_text">Selecciona un bloque</string>
+    <string name="bed_block_required_error_text">Es obligatorio seleccionar un bloque</string>
+    <string name="bed_block_retry_button_text">Recargar bloques</string>
+    <string name="bed_loading_blocks_error_text">No se pudieron cargar los bloques</string>
+    <string name="bed_loading_blocks_text">Cargando bloques...</string>
+    <string name="bed_name_label_text">Nombre</string>
+    <string name="bed_name_error_text">El nombre de la cama es obligatorio</string>
+    <string name="bed_description_label_text">Descripción</string>
+    <string name="bed_description_error_text">La descripción de la cama es obligatoria</string>
 </resources>

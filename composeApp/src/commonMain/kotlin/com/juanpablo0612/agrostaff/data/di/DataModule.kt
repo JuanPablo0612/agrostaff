@@ -3,6 +3,8 @@ package com.juanpablo0612.agrostaff.data.di
 import com.juanpablo0612.agrostaff.Sekret
 import com.juanpablo0612.agrostaff.data.auth.AuthRepository
 import com.juanpablo0612.agrostaff.data.auth.remote.AuthRemoteDataSource
+import com.juanpablo0612.agrostaff.data.beds.BedsRepository
+import com.juanpablo0612.agrostaff.data.beds.remote.BedsRemoteDataSource
 import com.juanpablo0612.agrostaff.data.blocks.BlocksRepository
 import com.juanpablo0612.agrostaff.data.blocks.remote.BlocksRemoteDataSource
 import io.github.jan.supabase.auth.Auth
@@ -25,6 +27,8 @@ val dataModule = module {
     }
     singleOf(::AuthRemoteDataSource)
     singleOf(::BlocksRemoteDataSource)
+    singleOf(::BedsRemoteDataSource)
     singleOf(::AuthRepository)
     singleOf(::BlocksRepository)
+    singleOf(::BedsRepository)
 }

@@ -94,4 +94,26 @@
     <string name="block_name_error_text">Block name is required</string>
     <string name="block_description_label_text">Description</string>
     <string name="block_description_error_text">Block description is required</string>
+
+    <string name="beds_title">Beds</string>
+    <string name="bed_list_empty_state">No beds yet. Add your first bed to get started.</string>
+    <string name="bed_list_generic_error">Unable to load beds</string>
+    <string name="bed_list_delete_error">Unable to delete bed</string>
+    <string name="bed_list_retry_button">Try again</string>
+    <string name="bed_list_add_content_description">Add bed</string>
+    <string name="bed_list_delete_content_description">Delete bed</string>
+    <string name="bed_list_block_label">Block %1$d</string>
+
+    <string name="add_bed_title">Add New Bed</string>
+    <string name="add_bed_button_text">Add Bed</string>
+    <string name="bed_block_label_text">Block</string>
+    <string name="bed_block_placeholder_text">Select a block</string>
+    <string name="bed_block_required_error_text">Selecting a block is required</string>
+    <string name="bed_block_retry_button_text">Reload blocks</string>
+    <string name="bed_loading_blocks_error_text">Unable to load blocks</string>
+    <string name="bed_loading_blocks_text">Loading blocks...</string>
+    <string name="bed_name_label_text">Name</string>
+    <string name="bed_name_error_text">Bed name is required</string>
+    <string name="bed_description_label_text">Description</string>
+    <string name="bed_description_error_text">Bed description is required</string>
 </resources>

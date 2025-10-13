@@ -1,7 +1,6 @@
 package com.juanpablo0612.agrostaff.data.beds.remote
 
 import com.juanpablo0612.agrostaff.data.beds.model.BedModel
-import com.juanpablo0612.agrostaff.data.blocks.model.BlockModel
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.postgrest.from
 
@@ -35,6 +34,16 @@ class BedsRemoteDataSource(private val supabase: SupabaseClient) {
             filter {
                 BedModel::id eq id
             }
+        }
+        .decodeSingleOrNull<BedModel>()
+
+    suspend fun deleteBed(id: Int) = supabase
+        .from(BEDS_TABLE_NAME)
+        .delete {
+            filter {
+                BedModel::id eq id
+            }
+            select()
         }
         .decodeSingleOrNull<BedModel>()
 }

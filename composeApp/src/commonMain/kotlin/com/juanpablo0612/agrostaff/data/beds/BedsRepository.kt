@@ -33,4 +33,11 @@ class BedsRepository(private val remoteDataSource: BedsRemoteDataSource) {
     } catch (e: Exception) {
         Result.failure(e as Throwable)
     }
+
+    suspend fun deleteBed(id: Int) = try {
+        val model = remoteDataSource.deleteBed(id)
+        Result.success(model?.toDomain())
+    } catch (e: Exception) {
+        Result.failure(e as Throwable)
+    }
 }
