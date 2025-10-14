@@ -8,9 +8,9 @@ import kotlinx.serialization.Serializable
 object UserListDestination
 
 fun NavGraphBuilder.userListDestination(
-    onNavigateToUserDetail: (userId: Int) -> Unit
+    onNavigateToAddUser: () -> Unit,
 ) {
      composable<UserListDestination> {
-         UserListScreen(onNavigateToUserDetail = onNavigateToUserDetail)
+         UserListScreen(onNavigateToAddUser = onNavigateToAddUser)
      }
 }

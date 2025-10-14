@@ -7,6 +7,8 @@ import com.juanpablo0612.agrostaff.data.beds.BedsRepository
 import com.juanpablo0612.agrostaff.data.beds.remote.BedsRemoteDataSource
 import com.juanpablo0612.agrostaff.data.blocks.BlocksRepository
 import com.juanpablo0612.agrostaff.data.blocks.remote.BlocksRemoteDataSource
+import com.juanpablo0612.agrostaff.data.users.UsersRepository
+import com.juanpablo0612.agrostaff.data.users.remote.UsersRemoteDataSource
 import io.github.jan.supabase.auth.Auth
 import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.postgrest.Postgrest
@@ -28,7 +30,9 @@ val dataModule = module {
     singleOf(::AuthRemoteDataSource)
     singleOf(::BlocksRemoteDataSource)
     singleOf(::BedsRemoteDataSource)
+    singleOf(::UsersRemoteDataSource)
     singleOf(::AuthRepository)
     singleOf(::BlocksRepository)
     singleOf(::BedsRepository)
+    singleOf(::UsersRepository)
 }

@@ -79,6 +79,29 @@
     <string name="role_admin">Admin</string>
     <string name="role_supervisor">Supervisor</string>
     <string name="role_worker">Worker</string>
+    <string name="availability_active">Active</string>
+    <string name="availability_rest">Rest</string>
+    <string name="availability_absent">Absent</string>
+
+    <string name="user_list_empty_state">No users yet. Add your first user to get started.</string>
+    <string name="user_list_generic_error">Unable to load users</string>
+    <string name="user_list_delete_error">Unable to delete user</string>
+    <string name="user_list_retry_button">Try again</string>
+    <string name="user_list_add_content_description">Add user</string>
+    <string name="user_list_delete_content_description">Delete user</string>
+    <string name="user_list_role_label">Role: %1$s</string>
+    <string name="user_list_availability_label">Availability: %1$s</string>
+    <string name="user_list_phone_label">Phone: %1$d</string>
+
+    <string name="add_user_title">Add New User</string>
+    <string name="add_user_button_text">Add User</string>
+    <string name="identity_document_type_label_text">Document Type</string>
+    <string name="identity_document_number_label_text">Document Number</string>
+    <string name="identity_document_number_error_text">Document number is required</string>
+    <string name="identity_document_issued_in_label_text">Issued In</string>
+    <string name="identity_document_issued_in_error_text">Issued in is required</string>
+    <string name="user_role_label_text">Role</string>
+    <string name="user_availability_label_text">Availability</string>
 
     <string name="blocks_title">Blocks</string>
     <string name="block_list_empty_state">No blocks yet. Add your first block to get started.</string>

@@ -1,9 +1,14 @@
 package com.juanpablo0612.agrostaff.navigation
 
+import agrostaff.composeapp.generated.resources.Res
+import agrostaff.composeapp.generated.resources.beds_title
+import agrostaff.composeapp.generated.resources.blocks_title
+import agrostaff.composeapp.generated.resources.users_title
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.List
 import androidx.compose.material.icons.outlined.Dashboard
-import androidx.compose.material.icons.outlined.List
+import androidx.compose.material.icons.outlined.People
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -12,11 +17,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.NavGraph.Companion.findStartDestination
-import com.juanpablo0612.agrostaff.ui.auth.sign_in.SignInDestination
 import com.juanpablo0612.agrostaff.ui.auth.sign_in.signInDestination
 import com.juanpablo0612.agrostaff.ui.beds.add.AddBedDestination
 import com.juanpablo0612.agrostaff.ui.beds.add.addBedDestination
@@ -26,13 +31,12 @@ import com.juanpablo0612.agrostaff.ui.blocks.add.AddBlockDestination
 import com.juanpablo0612.agrostaff.ui.blocks.add.addBlockDestination
 import com.juanpablo0612.agrostaff.ui.blocks.list.BlockListDestination
 import com.juanpablo0612.agrostaff.ui.blocks.list.blockListDestination
+import com.juanpablo0612.agrostaff.ui.users.add.AddUserDestination
+import com.juanpablo0612.agrostaff.ui.users.add.addUserDestination
+import com.juanpablo0612.agrostaff.ui.users.list.UserListDestination
 import com.juanpablo0612.agrostaff.ui.users.list.userListDestination
-import org.jetbrains.compose.resources.stringResource
-import agrostaff.composeapp.generated.resources.Res
-import agrostaff.composeapp.generated.resources.blocks_title
-import agrostaff.composeapp.generated.resources.beds_title
-import androidx.compose.ui.graphics.vector.ImageVector
 import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.stringResource
 
 private data class BottomNavItem(
     val route: String,
@@ -65,9 +69,23 @@ fun AppNavigation() {
         BottomNavItem(
             route = BedListDestination::class.qualifiedName!!,
             label = Res.string.beds_title,
-            icon = Icons.Outlined.List,
+            icon = Icons.AutoMirrored.Outlined.List,
             onNavigate = {
                 navController.navigate(BedListDestination) {
+                    popUpTo(navController.graph.findStartDestination().id) {
+                        saveState = true
+                    }
+                    launchSingleTop = true
+                    restoreState = true
+                }
+            },
+        ),
+        BottomNavItem(
+            route = UserListDestination::class.qualifiedName!!,
+            label = Res.string.users_title,
+            icon = Icons.Outlined.People,
+            onNavigate = {
+                navController.navigate(UserListDestination) {
                     popUpTo(navController.graph.findStartDestination().id) {
                         saveState = true
                     }
@@ -135,7 +153,16 @@ fun AppNavigation() {
                 }
             )
             signInDestination(onNavigateToPasswordRecovery = {}, onNavigateToSignUp = {})
-            userListDestination(onNavigateToUserDetail = {})
+            userListDestination(
+                onNavigateToAddUser = {
+                    navController.navigate(AddUserDestination)
+                }
+            )
+            addUserDestination(
+                onNavigateBack = {
+                    navController.popBackStack()
+                }
+            )
         }
     }
 }

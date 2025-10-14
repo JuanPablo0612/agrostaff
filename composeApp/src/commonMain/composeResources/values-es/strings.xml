@@ -80,6 +80,29 @@
     <string name="role_admin">Administrador</string>
     <string name="role_supervisor">Supervisor</string>
     <string name="role_worker">Trabajador</string>
+    <string name="availability_active">Activo</string>
+    <string name="availability_rest">Descanso</string>
+    <string name="availability_absent">Ausente</string>
+
+    <string name="user_list_empty_state">Aún no hay usuarios. Agrega tu primer usuario para comenzar.</string>
+    <string name="user_list_generic_error">No se pudieron cargar los usuarios</string>
+    <string name="user_list_delete_error">No se pudo eliminar el usuario</string>
+    <string name="user_list_retry_button">Intentar de nuevo</string>
+    <string name="user_list_add_content_description">Agregar usuario</string>
+    <string name="user_list_delete_content_description">Eliminar usuario</string>
+    <string name="user_list_role_label">Rol: %1$s</string>
+    <string name="user_list_availability_label">Disponibilidad: %1$s</string>
+    <string name="user_list_phone_label">Teléfono: %1$d</string>
+
+    <string name="add_user_title">Agregar nuevo usuario</string>
+    <string name="add_user_button_text">Agregar usuario</string>
+    <string name="identity_document_type_label_text">Tipo de documento</string>
+    <string name="identity_document_number_label_text">Número de documento</string>
+    <string name="identity_document_number_error_text">El número de documento es obligatorio</string>
+    <string name="identity_document_issued_in_label_text">Expedido en</string>
+    <string name="identity_document_issued_in_error_text">El lugar de expedición es obligatorio</string>
+    <string name="user_role_label_text">Rol</string>
+    <string name="user_availability_label_text">Disponibilidad</string>
 
     <string name="blocks_title">Bloques</string>
     <string name="block_list_empty_state">Aún no hay bloques. Agrega tu primer bloque para comenzar.</string>
