@@ -25,8 +25,8 @@ val dataModule = module {
     single { HttpClient() }
     single {
         createSupabaseClient(
-            supabaseUrl = Sekret.supabaseUrl("com.juanpablo0612.agrostaff")!!,
-            supabaseKey = Sekret.supabaseKey("com.juanpablo0612.agrostaff")!!
+            supabaseUrl = AppSecrets.supabaseUrl,
+            supabaseKey = AppSecrets.supabaseKey
         ) {
             install(Auth)
             install(Postgrest)
