@@ -8,7 +8,6 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.kotlinxSerialization)
     alias(libs.plugins.composeCompiler)
-    alias(libs.plugins.sekret)
 }
 
 kotlin {
@@ -126,12 +125,3 @@ fun Project.loadLocalProperty(
     }
 
 }
-
-sekret {
-    properties {
-        enabled.set(true)
-        packageName.set("com.juanpablo0612.agrostaff")
-        propertiesFile.set(File("secrets.properties"))
-    }
-}
-

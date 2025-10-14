@@ -1,6 +1,5 @@
 package com.juanpablo0612.agrostaff.data.di
 
-import com.juanpablo0612.agrostaff.Sekret
 import com.juanpablo0612.agrostaff.data.auth.AuthRepository
 import com.juanpablo0612.agrostaff.data.auth.remote.AuthRemoteDataSource
 import com.juanpablo0612.agrostaff.data.beds.BedsRepository
