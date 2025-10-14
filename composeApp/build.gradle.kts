@@ -86,8 +86,8 @@ android {
             path = "secrets.properties",
             propertyName = "SUPABASE_KEY"
         )
-        buildConfigField("String", "SUPABASE_URL", supabaseUrl)
-        buildConfigField("String", "SUPABASE_KEY", supabaseKey)
+        buildConfigField("String", "SUPABASE_URL", "\"$supabaseUrl\"")
+        buildConfigField("String", "SUPABASE_KEY", "\"$supabaseKey\"")
     }
     packaging {
         resources {

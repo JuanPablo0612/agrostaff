@@ -16,6 +16,11 @@ import io.ktor.client.HttpClient
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
+expect object AppSecrets {
+    val supabaseUrl: String
+    val supabaseKey: String
+}
+
 val dataModule = module {
     single { HttpClient() }
     single {
