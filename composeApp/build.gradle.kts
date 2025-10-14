@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -76,11 +77,25 @@ android {
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
+
+        val supabaseUrl = project.loadLocalProperty(
+            path = "secrets.properties",
+            propertyName = "SUPABASE_URL"
+        )
+        val supabaseKey = project.loadLocalProperty(
+            path = "secrets.properties",
+            propertyName = "SUPABASE_KEY"
+        )
+        buildConfigField("String", "SUPABASE_URL", supabaseUrl)
+        buildConfigField("String", "SUPABASE_KEY", supabaseKey)
     }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+    buildFeatures {
+        buildConfig = true
     }
     buildTypes {
         getByName("release") {
@@ -97,11 +112,26 @@ dependencies {
     debugImplementation(compose.uiTooling)
 }
 
+fun Project.loadLocalProperty(
+    path: String,
+    propertyName: String,
+): String {
+    val localProperties = Properties()
+    val localPropertiesFile = project.file(path)
+    if (localPropertiesFile.exists()) {
+        localProperties.load(localPropertiesFile.inputStream())
+        return localProperties.getProperty(propertyName)
+    } else {
+        throw GradleException("Can not find property : $propertyName")
+    }
+
+}
+
 sekret {
     properties {
         enabled.set(true)
         packageName.set("com.juanpablo0612.agrostaff")
-        propertiesFile.set(File("sekret.properties"))
+        propertiesFile.set(File("secrets.properties"))
     }
 }
 

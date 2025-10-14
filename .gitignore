@@ -16,6 +16,5 @@ captures
 !*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
-/composeApp/sekret.properties
-/composeApp/sekret/src
+/composeApp/secrets.properties
 AGENTS.md
