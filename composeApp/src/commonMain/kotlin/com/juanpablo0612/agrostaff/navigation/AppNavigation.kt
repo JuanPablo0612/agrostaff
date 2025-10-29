@@ -33,6 +33,7 @@ import androidx.navigation.compose.rememberNavController
 import com.juanpablo0612.agrostaff.ui.auth.sign_in.signInDestination
 import com.juanpablo0612.agrostaff.ui.beds.add.AddBedDestination
 import com.juanpablo0612.agrostaff.ui.beds.add.addBedDestination
+import com.juanpablo0612.agrostaff.ui.beds.add.navigateToAddBed
 import com.juanpablo0612.agrostaff.ui.beds.list.BedListDestination
 import com.juanpablo0612.agrostaff.ui.beds.list.bedListDestination
 import com.juanpablo0612.agrostaff.ui.blocks.add.AddBlockDestination
@@ -154,7 +155,7 @@ fun AppNavigation() {
             )
             bedListDestination(
                 onNavigateToAddBed = {
-                    navController.navigateToAddBlock()
+                    navController.navigateToAddBed()
                 }
             )
             addBlockDestination(

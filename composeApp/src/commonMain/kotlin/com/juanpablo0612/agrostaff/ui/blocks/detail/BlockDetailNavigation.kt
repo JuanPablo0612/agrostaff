@@ -3,7 +3,6 @@ package com.juanpablo0612.agrostaff.ui.blocks.detail
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.juanpablo0612.agrostaff.ui.blocks.list.BlockListScreen
 import kotlinx.serialization.Serializable
 
 @Serializable
