@@ -4,6 +4,14 @@ import agrostaff.composeapp.generated.resources.Res
 import agrostaff.composeapp.generated.resources.beds_title
 import agrostaff.composeapp.generated.resources.blocks_title
 import agrostaff.composeapp.generated.resources.users_title
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.List
@@ -29,10 +37,12 @@ import com.juanpablo0612.agrostaff.ui.beds.list.BedListDestination
 import com.juanpablo0612.agrostaff.ui.beds.list.bedListDestination
 import com.juanpablo0612.agrostaff.ui.blocks.add.AddBlockDestination
 import com.juanpablo0612.agrostaff.ui.blocks.add.addBlockDestination
+import com.juanpablo0612.agrostaff.ui.blocks.add.navigateToAddBlock
 import com.juanpablo0612.agrostaff.ui.blocks.list.BlockListDestination
 import com.juanpablo0612.agrostaff.ui.blocks.list.blockListDestination
 import com.juanpablo0612.agrostaff.ui.users.add.AddUserDestination
 import com.juanpablo0612.agrostaff.ui.users.add.addUserDestination
+import com.juanpablo0612.agrostaff.ui.users.add.navigateToAddUser
 import com.juanpablo0612.agrostaff.ui.users.list.UserListDestination
 import com.juanpablo0612.agrostaff.ui.users.list.userListDestination
 import org.jetbrains.compose.resources.StringResource
@@ -101,7 +111,11 @@ fun AppNavigation() {
 
     Scaffold(
         bottomBar = {
-            if (shouldShowBottomBar) {
+            AnimatedVisibility(
+                shouldShowBottomBar,
+                enter = expandVertically() + fadeIn(),
+                exit = shrinkVertically() + fadeOut()
+            ) {
                 NavigationBar {
                     bottomNavItems.forEach { item ->
                         val selected = currentRoute == item.route
@@ -125,7 +139,8 @@ fun AppNavigation() {
                     }
                 }
             }
-        }
+        },
+        contentWindowInsets = WindowInsets(0, 0, 0, 0)
     ) { innerPadding ->
         NavHost(
             navController = navController,
@@ -134,12 +149,12 @@ fun AppNavigation() {
         ) {
             blockListDestination(
                 onNavigateToAddBlock = {
-                    navController.navigate(AddBlockDestination)
+                    navController.navigateToAddBlock()
                 }
             )
             bedListDestination(
                 onNavigateToAddBed = {
-                    navController.navigate(AddBedDestination)
+                    navController.navigateToAddBlock()
                 }
             )
             addBlockDestination(
@@ -155,7 +170,7 @@ fun AppNavigation() {
             signInDestination(onNavigateToPasswordRecovery = {}, onNavigateToSignUp = {})
             userListDestination(
                 onNavigateToAddUser = {
-                    navController.navigate(AddUserDestination)
+                    navController.navigateToAddUser()
                 }
             )
             addUserDestination(
