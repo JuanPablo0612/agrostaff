@@ -9,8 +9,6 @@ import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.shrinkVertically
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -31,17 +29,16 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.juanpablo0612.agrostaff.ui.auth.sign_in.signInDestination
-import com.juanpablo0612.agrostaff.ui.beds.add.AddBedDestination
 import com.juanpablo0612.agrostaff.ui.beds.add.addBedDestination
 import com.juanpablo0612.agrostaff.ui.beds.add.navigateToAddBed
 import com.juanpablo0612.agrostaff.ui.beds.list.BedListDestination
 import com.juanpablo0612.agrostaff.ui.beds.list.bedListDestination
-import com.juanpablo0612.agrostaff.ui.blocks.add.AddBlockDestination
 import com.juanpablo0612.agrostaff.ui.blocks.add.addBlockDestination
 import com.juanpablo0612.agrostaff.ui.blocks.add.navigateToAddBlock
+import com.juanpablo0612.agrostaff.ui.blocks.detail.blockDetailDestination
+import com.juanpablo0612.agrostaff.ui.blocks.detail.navigateToBlockDetail
 import com.juanpablo0612.agrostaff.ui.blocks.list.BlockListDestination
 import com.juanpablo0612.agrostaff.ui.blocks.list.blockListDestination
-import com.juanpablo0612.agrostaff.ui.users.add.AddUserDestination
 import com.juanpablo0612.agrostaff.ui.users.add.addUserDestination
 import com.juanpablo0612.agrostaff.ui.users.add.navigateToAddUser
 import com.juanpablo0612.agrostaff.ui.users.list.UserListDestination
@@ -151,11 +148,19 @@ fun AppNavigation() {
             blockListDestination(
                 onNavigateToAddBlock = {
                     navController.navigateToAddBlock()
+                },
+                onNavigateToBlockDetail = { blockId ->
+                    navController.navigateToBlockDetail(blockId)
                 }
             )
             bedListDestination(
                 onNavigateToAddBed = {
                     navController.navigateToAddBed()
+                }
+            )
+            blockDetailDestination(
+                onNavigateBack = {
+                    navController.navigateUp()
                 }
             )
             addBlockDestination(

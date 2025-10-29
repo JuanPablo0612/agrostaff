@@ -6,18 +6,18 @@ import androidx.navigation.compose.composable
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class BlockListDestination(
-    val id: Long
+data class BlockDetailDestination(
+    val id: Int
 )
 
-fun NavController.navigateToBlockDetail(blockId: Long) {
-    navigate(BlockListDestination(blockId))
+fun NavController.navigateToBlockDetail(blockId: Int) {
+    navigate(BlockDetailDestination(blockId))
 }
 
 fun NavGraphBuilder.blockDetailDestination(
     onNavigateBack: () -> Unit,
 ) {
-    composable<BlockListDestination> {
+    composable<BlockDetailDestination> {
         BlockDetailScreen(onNavigateBack = onNavigateBack)
     }
 }

@@ -118,6 +118,9 @@
     <string name="block_description_label_text">Description</string>
     <string name="block_description_error_text">Block description is required</string>
 
+    <string name="block_detail_title">Block Details</string>
+    <string name="update_block_button_text">Update Block</string>
+
     <string name="beds_title">Beds</string>
     <string name="bed_list_empty_state">No beds yet. Add your first bed to get started.</string>
     <string name="bed_list_generic_error">Unable to load beds</string>

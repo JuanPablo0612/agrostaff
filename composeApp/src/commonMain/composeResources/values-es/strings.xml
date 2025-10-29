@@ -112,12 +112,16 @@
     <string name="block_list_add_content_description">Agregar bloque</string>
     <string name="block_list_delete_content_description">Eliminar bloque</string>
 
+
     <string name="add_block_title">Agregar nuevo bloque</string>
     <string name="add_block_button_text">Agregar bloque</string>
     <string name="block_name_label_text">Nombre</string>
     <string name="block_name_error_text">El nombre del bloque es obligatorio</string>
     <string name="block_description_label_text">Descripción</string>
     <string name="block_description_error_text">La descripción del bloque es obligatoria</string>
+
+    <string name="block_detail_title">Detalle del Bloque</string>
+    <string name="update_block_button_text">Actualizar Bloque</string>
 
     <string name="beds_title">Camas</string>
     <string name="bed_list_empty_state">Aún no hay camas. Agrega tu primera cama para comenzar.</string>

@@ -30,11 +30,12 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Composable
 fun BlockListItemCard(
     block: BlockListItem,
+    onClick: () -> Unit,
     onDelete: () -> Unit,
     isDeleting: Boolean,
     modifier: Modifier = Modifier,
 ) {
-    OutlinedCard(modifier = modifier) {
+    OutlinedCard(modifier = modifier, onClick = onClick) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -86,6 +87,7 @@ private fun BlockListItemCardPreview() {
                 name = "Greenhouse Block",
                 description = "Main greenhouse area with hydroponic system",
             ),
+            onClick = {},
             onDelete = {},
             isDeleting = false,
             modifier = Modifier.fillMaxWidth()
@@ -103,6 +105,7 @@ private fun BlockListItemCardDeletingPreview() {
                 name = "Greenhouse Block",
                 description = "Main greenhouse area with hydroponic system",
             ),
+            onClick = {},
             onDelete = {},
             isDeleting = true,
             modifier = Modifier.fillMaxWidth()

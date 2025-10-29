@@ -40,6 +40,7 @@ import org.koin.compose.viewmodel.koinViewModel
 @Composable
 fun BlockListScreen(
     onNavigateToAddBlock: () -> Unit,
+    onNavigateToBlockDetail: (blockId: Int) -> Unit,
     viewModel: BlockListViewModel = koinViewModel(),
 ) {
     val uiState = viewModel.uiState
@@ -61,6 +62,7 @@ fun BlockListScreen(
 
     BlockListScreenContent(
         uiState = uiState,
+        onBlockClick = onNavigateToBlockDetail,
         onAddBlock = onNavigateToAddBlock,
         onDeleteBlock = viewModel::deleteBlock,
         onRetry = viewModel::retry,
@@ -72,6 +74,7 @@ fun BlockListScreen(
 @Composable
 internal fun BlockListScreenContent(
     uiState: BlockListUiState,
+    onBlockClick: (blockId: Int) -> Unit,
     onAddBlock: () -> Unit,
     onDeleteBlock: (Int) -> Unit,
     onRetry: () -> Unit,
@@ -129,6 +132,7 @@ internal fun BlockListScreenContent(
                             val isDeleting = uiState.deletingBlockIds.contains(block.id)
                             BlockListItemCard(
                                 block = block,
+                                onClick = { onBlockClick(block.id) },
                                 onDelete = { onDeleteBlock(block.id) },
                                 isDeleting = isDeleting,
                                 modifier = Modifier.fillMaxWidth()
@@ -155,6 +159,7 @@ private fun BlockListScreenContentPreview() {
                     )
                 }
             ),
+            onBlockClick = {},
             onAddBlock = {},
             onDeleteBlock = {},
             onRetry = {},

@@ -9,8 +9,9 @@ object BlockListDestination
 
 fun NavGraphBuilder.blockListDestination(
     onNavigateToAddBlock: () -> Unit,
+    onNavigateToBlockDetail: (blockId: Int) -> Unit,
 ) {
     composable<BlockListDestination> {
-        BlockListScreen(onNavigateToAddBlock = onNavigateToAddBlock)
+        BlockListScreen(onNavigateToAddBlock = onNavigateToAddBlock, onNavigateToBlockDetail = onNavigateToBlockDetail)
     }
 }
