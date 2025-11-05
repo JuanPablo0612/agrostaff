@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.toRoute
 import com.juanpablo0612.agrostaff.data.blocks.BlocksRepository
+import com.juanpablo0612.agrostaff.domain.models.Block
 import kotlinx.coroutines.launch
 
 class BlockDetailViewModel(
@@ -49,12 +50,6 @@ class BlockDetailViewModel(
         loadBlock(blockDetail.id)
     }
 
-    fun consumeError() {
-        if (uiState.error != null) {
-            uiState = uiState.copy(error = null)
-        }
-    }
-
     private fun loadBlock(blockId: Int) {
         viewModelScope.launch {
             uiState = uiState.copy(isLoading = true, error = null)
@@ -77,6 +72,47 @@ class BlockDetailViewModel(
             )
         }
     }
+
+    fun onUpdate() {
+        if (uiState.isLoading) return
+
+        uiState = uiState.copy(
+            name = uiState.name.trim(),
+            description = uiState.description.trim(),
+        )
+
+        if (!validateFields()) return
+
+        val block = Block(
+            name = uiState.name,
+            description = uiState.description,
+        )
+
+        viewModelScope.launch {
+            uiState = uiState.copy(isLoading = true, error = null)
+            val result = blocksRepository.createBlock(block)
+            uiState = if (result.isSuccess) {
+                BlockDetailUiState(isBlockUpdated = true)
+            } else {
+                uiState.copy(
+                    isLoading = false,
+                    error = BlockDetailError.UpdateFailed(result.exceptionOrNull()?.message ?: "An unexpected error occurred"),
+                )
+            }
+        }
+    }
+
+    private fun validateFields(): Boolean {
+        val isValidName = uiState.name.isNotBlank()
+        val isValidDescription = uiState.description.isNotBlank()
+
+        uiState = uiState.copy(
+            isValidName = isValidName,
+            isValidDescription = isValidDescription,
+        )
+
+        return isValidName && isValidDescription
+    }
 }
 
 data class BlockDetailUiState(
@@ -88,8 +124,10 @@ data class BlockDetailUiState(
     val isEditing: Boolean = false,
     val isLoading: Boolean = false,
     val error: BlockDetailError? = null,
+    val isBlockUpdated: Boolean = false,
 )
 
 sealed class BlockDetailError(open val message: String?) {
     data class LoadFailed(override val message: String?) : BlockDetailError(message)
+    data class UpdateFailed(override val message: String?) : BlockDetailError(message)
 }

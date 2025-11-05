@@ -18,6 +18,6 @@ fun NavGraphBuilder.blockDetailDestination(
     onNavigateBack: () -> Unit,
 ) {
     composable<BlockDetailDestination> {
-        BlockDetailScreen(onNavigateBack = onNavigateBack)
+        BlockDetailScreen(onNavigateBack = onNavigateBack, onBlockUpdated = onNavigateBack)
     }
 }

@@ -1,7 +1,6 @@
 package com.juanpablo0612.agrostaff.ui.blocks.detail
 
 import agrostaff.composeapp.generated.resources.Res
-import agrostaff.composeapp.generated.resources.add_block_button_text
 import agrostaff.composeapp.generated.resources.block_description_error_text
 import agrostaff.composeapp.generated.resources.block_description_label_text
 import agrostaff.composeapp.generated.resources.block_name_error_text
@@ -25,6 +24,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -37,19 +37,24 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun BlockDetailScreen(
+    onNavigateBack: () -> Unit,
+    onBlockUpdated: () -> Unit,
     viewModel: BlockDetailViewModel = koinViewModel(),
-    onNavigateBack: () -> Unit
 ) {
     val uiState = viewModel.uiState
+
+    LaunchedEffect(uiState.isBlockUpdated) {
+        if (uiState.isBlockUpdated) {
+            onBlockUpdated()
+        }
+    }
 
     BlockDetailScreenContent(
         uiState = uiState,
         onNameChange = viewModel::onNameChange,
         onDescriptionChange = viewModel::onDescriptionChange,
-        onSave = {},
-        onEditClick = {
-            viewModel.onEditingChange()
-        },
+        onUpdate = viewModel::onUpdate,
+        onEditClick = viewModel::onEditingChange,
         onNavigateBack = onNavigateBack
     )
 }
@@ -59,7 +64,7 @@ internal fun BlockDetailScreenContent(
     uiState: BlockDetailUiState,
     onNameChange: (String) -> Unit,
     onDescriptionChange: (String) -> Unit,
-    onSave: () -> Unit,
+    onUpdate: () -> Unit,
     onEditClick: () -> Unit,
     onNavigateBack: () -> Unit
 ) {
@@ -143,7 +148,7 @@ internal fun BlockDetailScreenContent(
                         Spacer(modifier = Modifier.weight(1f))
 
                         Button(
-                            onClick = onSave,
+                            onClick = onUpdate,
                             modifier = Modifier.fillMaxWidth(),
                             enabled = !uiState.isLoading,
                         ) {
@@ -179,7 +184,7 @@ private fun BlockDetailScreenPreview() {
             ),
             onNameChange = {},
             onDescriptionChange = {},
-            onSave = {},
+            onUpdate = {},
             onEditClick = {},
             onNavigateBack = {}
         )
