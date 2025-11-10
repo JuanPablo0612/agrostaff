@@ -31,11 +31,12 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Composable
 fun BedListItemCard(
     bed: BedListItem,
+    onClick: () -> Unit,
     onDelete: () -> Unit,
     isDeleting: Boolean,
     modifier: Modifier = Modifier,
 ) {
-    OutlinedCard(modifier = modifier) {
+    OutlinedCard(modifier = modifier, onClick = onClick) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -94,6 +95,7 @@ private fun BedListItemCardPreview() {
                 description = "Lettuce hydroponic line",
                 blockId = 3,
             ),
+            onClick = {},
             onDelete = {},
             isDeleting = false,
             modifier = Modifier.fillMaxWidth()
@@ -111,7 +113,7 @@ private fun BedListItemCardDeletingPreview() {
                 name = "Bed A",
                 description = "Lettuce hydroponic line",
                 blockId = 3,
-            ),
+            ), onClick = {},
             onDelete = {},
             isDeleting = true,
             modifier = Modifier.fillMaxWidth()

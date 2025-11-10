@@ -144,4 +144,7 @@
     <string name="bed_name_error_text">El nombre de la cama es obligatorio</string>
     <string name="bed_description_label_text">Descripción</string>
     <string name="bed_description_error_text">La descripción de la cama es obligatoria</string>
+
+    <string name="bed_detail_title">Detalles de la Cama</string>>
+    <string name="update_bed_button_text">Actualizar Cama</string>
 </resources>

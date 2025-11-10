@@ -2,6 +2,7 @@ package com.juanpablo0612.agrostaff.ui.di
 
 import com.juanpablo0612.agrostaff.ui.auth.sign_in.SignInViewModel
 import com.juanpablo0612.agrostaff.ui.beds.add.AddBedViewModel
+import com.juanpablo0612.agrostaff.ui.beds.detail.BedDetailViewModel
 import com.juanpablo0612.agrostaff.ui.beds.list.BedListViewModel
 import com.juanpablo0612.agrostaff.ui.blocks.add.AddBlockViewModel
 import com.juanpablo0612.agrostaff.ui.blocks.detail.BlockDetailViewModel
@@ -16,6 +17,7 @@ val viewModelModule = module {
     viewModelOf(::AddBlockViewModel)
     viewModelOf(::BlockListViewModel)
     viewModelOf(::BlockDetailViewModel)
+    viewModelOf(::BedDetailViewModel)
     viewModelOf(::AddBedViewModel)
     viewModelOf(::BedListViewModel)
     viewModelOf(::AddUserViewModel)

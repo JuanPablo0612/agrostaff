@@ -37,6 +37,16 @@ class BedsRemoteDataSource(private val supabase: SupabaseClient) {
         }
         .decodeSingleOrNull<BedModel>()
 
+    suspend fun updateBed(bedId: Int, bed: BedModel) = supabase
+        .from(BEDS_TABLE_NAME)
+        .update(bed) {
+            filter {
+                BedModel::id eq bedId
+            }
+            select()
+        }
+        .decodeSingleOrNull<BedModel>()
+
     suspend fun deleteBed(id: Int) = supabase
         .from(BEDS_TABLE_NAME)
         .delete {

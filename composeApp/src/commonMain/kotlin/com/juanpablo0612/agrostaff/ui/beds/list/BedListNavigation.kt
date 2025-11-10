@@ -9,8 +9,9 @@ object BedListDestination
 
 fun NavGraphBuilder.bedListDestination(
     onNavigateToAddBed: () -> Unit,
+    onNavigateToBedDetail: (Int) -> Unit,
 ) {
     composable<BedListDestination> {
-        BedListScreen(onNavigateToAddBed = onNavigateToAddBed)
+        BedListScreen(onNavigateToAddBed = onNavigateToAddBed, onNavigateToBedDetail = onNavigateToBedDetail)
     }
 }

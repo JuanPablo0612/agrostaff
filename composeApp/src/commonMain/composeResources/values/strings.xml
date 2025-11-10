@@ -142,4 +142,7 @@
     <string name="bed_name_error_text">Bed name is required</string>
     <string name="bed_description_label_text">Description</string>
     <string name="bed_description_error_text">Bed description is required</string>
+
+    <string name="bed_detail_title">Bed Details</string>
+    <string name="update_bed_button_text">Update Bed</string>
 </resources>

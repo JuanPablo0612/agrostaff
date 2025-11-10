@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.juanpablo0612.agrostaff.data.beds.BedsRepository
 import com.juanpablo0612.agrostaff.data.blocks.BlocksRepository
 import com.juanpablo0612.agrostaff.domain.models.Bed
+import com.juanpablo0612.agrostaff.ui.beds.components.BlockOption
 import kotlinx.coroutines.launch
 
 class AddBedViewModel(
@@ -90,17 +91,11 @@ class AddBedViewModel(
             val result = blocksRepository.getAllBlocks()
             uiState = result.fold(
                 onSuccess = { blocks ->
-                    val currentSelection = uiState.selectedBlockId
-                    val options = blocks.mapNotNull { block ->
-                        val id = block.id ?: return@mapNotNull null
-                        BlockOption(id = id, name = block.name)
-                    }
-                    val updatedSelection = currentSelection?.takeIf { selectedId ->
-                        options.any { it.id == selectedId }
+                    val options = blocks.map { block ->
+                        BlockOption(id = block.id!!, name = block.name)
                     }
                     uiState.copy(
                         blocks = options,
-                        selectedBlockId = updatedSelection,
                         isLoadingBlocks = false,
                         blocksErrorMessage = null,
                     )
@@ -143,9 +138,4 @@ data class AddBedUiState(
     val isLoading: Boolean = false,
     val errorMessage: String? = null,
     val isBedAdded: Boolean = false,
-)
-
-data class BlockOption(
-    val id: Int,
-    val name: String,
 )

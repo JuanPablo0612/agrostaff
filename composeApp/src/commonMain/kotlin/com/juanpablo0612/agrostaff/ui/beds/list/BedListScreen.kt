@@ -40,6 +40,7 @@ import org.koin.compose.viewmodel.koinViewModel
 @Composable
 fun BedListScreen(
     onNavigateToAddBed: () -> Unit,
+    onNavigateToBedDetail: (bedId: Int) -> Unit,
     viewModel: BedListViewModel = koinViewModel(),
 ) {
     val uiState = viewModel.uiState
@@ -61,6 +62,7 @@ fun BedListScreen(
 
     BedListScreenContent(
         uiState = uiState,
+        onBedClick =  onNavigateToBedDetail,
         onAddBed = onNavigateToAddBed,
         onDeleteBed = viewModel::deleteBed,
         onRetry = viewModel::retry,
@@ -72,6 +74,7 @@ fun BedListScreen(
 @Composable
 internal fun BedListScreenContent(
     uiState: BedListUiState,
+    onBedClick: (bedId: Int) -> Unit,
     onAddBed: () -> Unit,
     onDeleteBed: (Int) -> Unit,
     onRetry: () -> Unit,
@@ -129,6 +132,7 @@ internal fun BedListScreenContent(
                             val isDeleting = uiState.deletingBedIds.contains(bed.id)
                             BedListItemCard(
                                 bed = bed,
+                                onClick = { onBedClick(bed.id) },
                                 onDelete = { onDeleteBed(bed.id) },
                                 isDeleting = isDeleting,
                                 modifier = Modifier.fillMaxWidth()
@@ -156,6 +160,7 @@ private fun BedListScreenContentPreview() {
                     )
                 }
             ),
+            onBedClick = {},
             onAddBed = {},
             onDeleteBed = {},
             onRetry = {},
