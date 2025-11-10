@@ -84,19 +84,22 @@ class BlockDetailViewModel(
         if (!validateFields()) return
 
         val block = Block(
+            id = uiState.blockId,
             name = uiState.name,
             description = uiState.description,
         )
 
         viewModelScope.launch {
             uiState = uiState.copy(isLoading = true, error = null)
-            val result = blocksRepository.createBlock(block)
+            val result = blocksRepository.updateBlock(uiState.blockId!!, block)
             uiState = if (result.isSuccess) {
                 BlockDetailUiState(isBlockUpdated = true)
             } else {
                 uiState.copy(
                     isLoading = false,
-                    error = BlockDetailError.UpdateFailed(result.exceptionOrNull()?.message ?: "An unexpected error occurred"),
+                    error = BlockDetailError.UpdateFailed(
+                        result.exceptionOrNull()?.message ?: "An unexpected error occurred"
+                    ),
                 )
             }
         }
