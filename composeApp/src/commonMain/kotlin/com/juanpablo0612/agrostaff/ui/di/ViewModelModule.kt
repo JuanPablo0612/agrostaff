@@ -8,6 +8,7 @@ import com.juanpablo0612.agrostaff.ui.blocks.add.AddBlockViewModel
 import com.juanpablo0612.agrostaff.ui.blocks.detail.BlockDetailViewModel
 import com.juanpablo0612.agrostaff.ui.blocks.list.BlockListViewModel
 import com.juanpablo0612.agrostaff.ui.users.add.AddUserViewModel
+import com.juanpablo0612.agrostaff.ui.users.detail.UserDetailViewModel
 import com.juanpablo0612.agrostaff.ui.users.list.UserListViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
@@ -22,4 +23,5 @@ val viewModelModule = module {
     viewModelOf(::BedListViewModel)
     viewModelOf(::AddUserViewModel)
     viewModelOf(::UserListViewModel)
+    viewModelOf(::UserDetailViewModel)
 }

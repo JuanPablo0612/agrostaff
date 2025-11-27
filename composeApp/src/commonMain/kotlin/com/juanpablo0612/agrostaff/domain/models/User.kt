@@ -6,7 +6,7 @@ import com.juanpablo0612.agrostaff.data.users.model.UserRole
 import kotlinx.datetime.LocalDateTime
 
 data class User(
-    val id: Int,
+    val id: Int?,
     val authUserId: String,
     val firstName: String,
     val lastName: String,

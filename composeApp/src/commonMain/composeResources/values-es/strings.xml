@@ -104,6 +104,9 @@
     <string name="user_role_label_text">Rol</string>
     <string name="user_availability_label_text">Disponibilidad</string>
 
+    <string name="user_details_title">Detalles del Usuario</string>
+    <string name="update_user_button_text">Actualizar Usuario</string>
+
     <string name="blocks_title">Bloques</string>
     <string name="block_list_empty_state">Aún no hay bloques. Agrega tu primer bloque para comenzar.</string>
     <string name="block_list_generic_error">No se pudieron cargar los bloques</string>
@@ -111,7 +114,6 @@
     <string name="block_list_retry_button">Intentar de nuevo</string>
     <string name="block_list_add_content_description">Agregar bloque</string>
     <string name="block_list_delete_content_description">Eliminar bloque</string>
-
 
     <string name="add_block_title">Agregar nuevo bloque</string>
     <string name="add_block_button_text">Agregar bloque</string>

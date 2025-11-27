@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class UserModel(
-    @SerialName("id") val id: Int,
+    @SerialName("id") val id: Int? = null,
     @SerialName("auth_user_id") val authUserId: String? = null,
     @SerialName("first_name") val firstName: String,
     @SerialName("last_name") val lastName: String,

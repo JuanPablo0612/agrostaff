@@ -9,8 +9,12 @@ object UserListDestination
 
 fun NavGraphBuilder.userListDestination(
     onNavigateToAddUser: () -> Unit,
+    onNavigateToUserDetail: (userId: Int) -> Unit,
 ) {
-     composable<UserListDestination> {
-         UserListScreen(onNavigateToAddUser = onNavigateToAddUser)
-     }
+    composable<UserListDestination> {
+        UserListScreen(
+            onNavigateToAddUser = onNavigateToAddUser,
+            onNavigateToUserDetail = onNavigateToUserDetail
+        )
+    }
 }

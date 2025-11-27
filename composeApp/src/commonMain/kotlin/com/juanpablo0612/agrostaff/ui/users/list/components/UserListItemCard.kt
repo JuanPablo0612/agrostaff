@@ -42,11 +42,12 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Composable
 fun UserListItemCard(
     userListItem: UserListItem,
+    onClick: () -> Unit,
     onDelete: () -> Unit,
     isDeleting: Boolean,
     modifier: Modifier = Modifier,
 ) {
-    OutlinedCard(modifier = modifier) {
+    OutlinedCard(modifier = modifier, onClick = onClick) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -148,6 +149,7 @@ private fun UserListItemCardPreview() {
                 availability = AvailabilityStatus.ACTIVE,
                 role = UserRole.SUPERVISOR,
             ),
+            onClick = {},
             onDelete = {},
             isDeleting = false,
             modifier = Modifier.fillMaxWidth()
@@ -169,6 +171,7 @@ private fun UserListItemCardDeletingPreview() {
                 availability = AvailabilityStatus.REST,
                 role = UserRole.WORKER,
             ),
+            onClick = {},
             onDelete = {},
             isDeleting = true,
             modifier = Modifier.fillMaxWidth()

@@ -72,7 +72,7 @@ class UserListViewModel(
                 onSuccess = { users ->
                     val userListItems = users.map { user ->
                         UserListItem(
-                            id = user.id,
+                            id = user.id!!,
                             name = "${user.firstName} ${user.lastName}",
                             identityDocumentType = user.identityDocumentType,
                             identityDocumentNumber = user.identityDocumentNumber,

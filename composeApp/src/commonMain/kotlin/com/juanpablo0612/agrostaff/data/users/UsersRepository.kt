@@ -42,6 +42,13 @@ class UsersRepository(private val remoteDataSource: UsersRemoteDataSource) {
         Result.failure(e as Throwable)
     }
 
+    suspend fun updateUser(userId: Int, user: User) = try {
+        val model = remoteDataSource.updateUser(userId, user.toModel())
+        Result.success(model?.toDomain())
+    } catch (e: Exception) {
+        Result.failure(e as Throwable)
+    }
+
     suspend fun deleteUser(id: Int) = try {
         val model = remoteDataSource.deleteUser(id)
         Result.success(model?.toDomain())

@@ -43,6 +43,7 @@ import org.koin.compose.viewmodel.koinViewModel
 @Composable
 fun UserListScreen(
     onNavigateToAddUser: () -> Unit,
+    onNavigateToUserDetail: (userId: Int) -> Unit,
     viewModel: UserListViewModel = koinViewModel(),
 ) {
     val uiState = viewModel.uiState
@@ -64,6 +65,7 @@ fun UserListScreen(
 
     UserListScreenContent(
         uiState = uiState,
+        onUserClick = onNavigateToUserDetail,
         onAddUser = onNavigateToAddUser,
         onDeleteUser = viewModel::deleteUser,
         onRetry = viewModel::retry,
@@ -75,6 +77,7 @@ fun UserListScreen(
 @Composable
 internal fun UserListScreenContent(
     uiState: UserListUiState,
+    onUserClick: (Int) -> Unit,
     onAddUser: () -> Unit,
     onDeleteUser: (Int) -> Unit,
     onRetry: () -> Unit,
@@ -131,6 +134,7 @@ internal fun UserListScreenContent(
                             val isDeleting = uiState.deletingUserIds.contains(user.id)
                             UserListItemCard(
                                 userListItem = user,
+                                onClick = { onUserClick(user.id) },
                                 onDelete = { onDeleteUser(user.id) },
                                 isDeleting = isDeleting,
                                 modifier = Modifier.fillMaxWidth()
@@ -161,6 +165,7 @@ private fun UserListScreenContentPreview() {
                     )
                 }
             ),
+            onUserClick = {},
             onAddUser = {},
             onDeleteUser = {},
             onRetry = {},

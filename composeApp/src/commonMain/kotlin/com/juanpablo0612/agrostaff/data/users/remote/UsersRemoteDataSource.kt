@@ -47,6 +47,16 @@ class UsersRemoteDataSource(private val supabase: SupabaseClient) {
         }
         .decodeSingleOrNull<UserModel>()
 
+    suspend fun updateUser(userId: Int, user: UserModel) = supabase
+        .from(USERS_TABLE_NAME)
+        .update(user) {
+            filter {
+                UserModel::id eq userId
+            }
+            select()
+        }
+        .decodeSingleOrNull<UserModel>()
+
     suspend fun deleteUser(id: Int) = supabase
         .from(USERS_TABLE_NAME)
         .delete {

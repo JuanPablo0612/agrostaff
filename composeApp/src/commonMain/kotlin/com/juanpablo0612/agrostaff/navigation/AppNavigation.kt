@@ -43,6 +43,8 @@ import com.juanpablo0612.agrostaff.ui.blocks.list.BlockListDestination
 import com.juanpablo0612.agrostaff.ui.blocks.list.blockListDestination
 import com.juanpablo0612.agrostaff.ui.users.add.addUserDestination
 import com.juanpablo0612.agrostaff.ui.users.add.navigateToAddUser
+import com.juanpablo0612.agrostaff.ui.users.detail.navigateToUserDetail
+import com.juanpablo0612.agrostaff.ui.users.detail.userDetailDestination
 import com.juanpablo0612.agrostaff.ui.users.list.UserListDestination
 import com.juanpablo0612.agrostaff.ui.users.list.userListDestination
 import org.jetbrains.compose.resources.StringResource
@@ -173,6 +175,11 @@ fun AppNavigation() {
                     navController.navigateUp()
                 }
             )
+            userDetailDestination(
+                onNavigateBack = {
+                    navController.navigateUp()
+                }
+            )
             addBlockDestination(
                 onNavigateBack = {
                     navController.popBackStack()
@@ -187,6 +194,9 @@ fun AppNavigation() {
             userListDestination(
                 onNavigateToAddUser = {
                     navController.navigateToAddUser()
+                },
+                onNavigateToUserDetail = { userId ->
+                    navController.navigateToUserDetail(userId)
                 }
             )
             addUserDestination(

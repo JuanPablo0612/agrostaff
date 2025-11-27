@@ -103,6 +103,9 @@
     <string name="user_role_label_text">Role</string>
     <string name="user_availability_label_text">Availability</string>
 
+    <string name="user_details_title">User Details</string>
+    <string name="update_user_button_text">Update User</string>
+
     <string name="blocks_title">Blocks</string>
     <string name="block_list_empty_state">No blocks yet. Add your first block to get started.</string>
     <string name="block_list_generic_error">Unable to load blocks</string>
